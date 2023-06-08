@@ -1,3 +1,13 @@
+<h1>Books</h1>
+<% @books.each do |book| %>
+<div>
+  <p>Title</p>
+  <%= book.title %>
+  <p>Opinion</p>
+  <%= book.body %>
+</div>
+<% end %>
+
 <h1>New Book</h1>
   <%= form_with model: @book do |f| %>
     <h4>Title</h4>
