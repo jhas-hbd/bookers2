@@ -1,13 +1,29 @@
 <h1>Books</h1>
-<% @books.each do |book| %>
-<div>
-  <p><%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p>Title</p>
-  <%= book.title %>
-  <p>Opinion</p>
-  <%= book.body %>
-</div>
-<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td>
+        <%= image_tag book.user.get_profile_image(100,100) %>
+      </td>
+      <td>
+        <%= book.title %>
+      </td>
+      <td>
+        <%= book.body %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <h1>New Book</h1>
   <%= form_with model: @post do |f| %>

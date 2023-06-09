@@ -9,11 +9,29 @@
 
 <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 
-<h1>Books</h1>
-<%= image_tag @user.get_profile_image(100,100) %>
-<% @books.each do |book| %>
-  <p>title</p>
-  <%= book.title %>
-  <p>opinion</p>
-  <%= book.body %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td>
+        <%= image_tag book.user.get_profile_image(100,100) %>
+      </td>
+      <td>
+        <%= book.title %>
+      </td>
+      <td>
+        <%= book.body %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>New Book</h1>
