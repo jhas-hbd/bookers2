@@ -1,13 +1,5 @@
-<h1>User info</h1>
-<div>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <p>name</p>
-  <%= @user.name %>
-  <p>introduction</p>
-  <%= @user.introduction %>
-</div>
-
-<%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+<%= render 'info', user: @user %>
+<%= render 'books/new', post: @post %>
 
 <table>
   <thead>
@@ -34,4 +26,3 @@
   </tbody>
 </table>
 
-<h1>New Book</h1>
